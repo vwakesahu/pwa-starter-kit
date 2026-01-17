@@ -29,8 +29,8 @@ export function InstallPrompt() {
   };
 
   return (
-    <div className="sticky top-0 left-0 right-0 bg-background border-b border-border safe-area-pt z-50">
-      <div className="flex items-center gap-3 p-4">
+    <div className="fixed left-0 right-0 z-40 bg-background border-b border-border safe-area-pt-with-header">
+      <div className="flex items-center gap-3 py-4 safe-area-px">
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-1">
             <Download className="w-5 h-5" />

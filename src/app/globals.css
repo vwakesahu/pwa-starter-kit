@@ -140,6 +140,14 @@
   padding-top: env(safe-area-inset-top);
 }
 
+.safe-area-pt-with-header {
+  padding-top: calc(3.5rem + env(safe-area-inset-top));
+}
+
+.safe-area-pt-with-header-and-banner {
+  padding-top: calc(8.5rem + env(safe-area-inset-top)); /* 3.5rem (header) + 5rem (banner) */
+}
+
 .safe-area-pr {
   padding-right: env(safe-area-inset-right);
 }
@@ -150,6 +158,16 @@
 
 .safe-area-pl {
   padding-left: env(safe-area-inset-left);
+}
+
+.safe-area-px {
+  padding-left: calc(1rem + env(safe-area-inset-left)) !important;
+  padding-right: calc(1rem + env(safe-area-inset-right)) !important;
+}
+
+.safe-area-py {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .safe-area-p {
