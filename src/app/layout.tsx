@@ -6,6 +6,7 @@ import { PWAProviders } from "@/components/pwa/pwa-providers";
 import { InstallPrompt } from "@/components/pwa/install-prompt";
 import { UpdatePrompt } from "@/components/pwa/update-prompt";
 import { OfflineIndicator } from "@/components/pwa/offline-indicator";
+import { siteConfig } from "@/lib/constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,21 +19,23 @@ const geistMono = Geist_Mono({
 });
 
 export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-  viewportFit: "cover",
+  width: siteConfig.viewport.width,
+  initialScale: siteConfig.viewport.initialScale,
+  maximumScale: siteConfig.viewport.maximumScale,
+  userScalable: siteConfig.viewport.userScalable,
+  viewportFit: siteConfig.viewport.viewportFit,
 };
 
 export const metadata: Metadata = {
+  title: siteConfig.name,
+  description: siteConfig.description,
   appleWebApp: {
-    capable: true,
-    statusBarStyle: "black-translucent",
-    title: "App Name",
+    capable: siteConfig.apple.capable,
+    statusBarStyle: siteConfig.apple.statusBarStyle,
+    title: siteConfig.apple.title,
   },
   formatDetection: {
-    telephone: false,
+    telephone: siteConfig.formatDetection.telephone,
   },
 };
 
