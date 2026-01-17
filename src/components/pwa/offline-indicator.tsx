@@ -32,8 +32,8 @@ export function OfflineIndicator() {
       <div
         className={`p-2 text-center text-sm font-medium flex items-center justify-center gap-2 ${
           network.isOnline
-            ? 'bg-green-500 text-white'
-            : 'bg-yellow-500 text-black'
+            ? 'bg-green-500 dark:bg-green-600 text-white'
+            : 'bg-yellow-500 dark:bg-yellow-600 text-black dark:text-white'
         }`}
       >
         {network.isOnline ? (

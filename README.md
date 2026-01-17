@@ -23,6 +23,7 @@ src/
 
 ## Usage
 
+### PWA Hooks
 ```tsx
 'use client';
 import { usePWA } from '@/components/pwa';
@@ -35,6 +36,27 @@ export default function MyPage() {
       {!network.isOnline && <p>Offline</p>}
       {install.isInstallable && <button onClick={install.promptInstall}>Install</button>}
     </div>
+  );
+}
+```
+
+### Theme Toggle
+```tsx
+'use client';
+import { ThemeToggle } from '@/components/theme-toggle';
+import { useTheme } from 'next-themes';
+
+export default function Header() {
+  const { theme, setTheme } = useTheme();
+
+  return (
+    <header>
+      <ThemeToggle />
+      {/* Or custom implementation */}
+      <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+        Toggle Theme
+      </button>
+    </header>
   );
 }
 ```

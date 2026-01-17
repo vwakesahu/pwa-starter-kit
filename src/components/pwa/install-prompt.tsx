@@ -29,20 +29,20 @@ export function InstallPrompt() {
   };
 
   return (
-    <div className="sticky top-0 left-0 right-0 bg-black text-white border-b border-white/10 safe-area-pt z-50">
+    <div className="sticky top-0 left-0 right-0 bg-background border-b border-border safe-area-pt z-50">
       <div className="flex items-center gap-3 p-4">
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-1">
             <Download className="w-5 h-5" />
-            <h3 className="font-semibold">Install App</h3>
+            <h3 className="font-semibold text-foreground">Install App</h3>
           </div>
 
           {install.isIOS ? (
-            <div className="text-sm text-white/60">
+            <div className="text-sm text-muted-foreground">
               Tap <Share className="inline w-4 h-4" /> then &quot;Add to Home Screen&quot;
             </div>
           ) : (
-            <p className="text-sm text-white/60">
+            <p className="text-sm text-muted-foreground">
               Install this app for a better experience
             </p>
           )}
@@ -52,14 +52,14 @@ export function InstallPrompt() {
           {!install.isIOS && (
             <button
               onClick={handleInstall}
-              className="px-4 py-2 bg-white text-black rounded-lg font-medium hover:bg-white/90 transition-colors"
+              className="px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
             >
               Install
             </button>
           )}
           <button
             onClick={handleDismiss}
-            className="p-2 hover:bg-white/10 rounded-lg transition-colors"
+            className="p-2 hover:bg-accent rounded-lg transition-colors"
             aria-label="Dismiss"
           >
             <X className="w-5 h-5" />

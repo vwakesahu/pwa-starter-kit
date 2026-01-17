@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 import { PWAProviders } from "@/components/pwa/pwa-providers";
 import { InstallPrompt } from "@/components/pwa/install-prompt";
 import { UpdatePrompt } from "@/components/pwa/update-prompt";
@@ -41,17 +42,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        suppressHydrationWarning
       >
-        <PWAProviders>
-          <OfflineIndicator />
-          <UpdatePrompt />
-          <InstallPrompt />
-          {children}
-        </PWAProviders>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <PWAProviders>
+            <OfflineIndicator />
+            <UpdatePrompt />
+            <InstallPrompt />
+            {children}
+          </PWAProviders>
+        </ThemeProvider>
       </body>
     </html>
   );
