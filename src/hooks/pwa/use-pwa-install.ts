@@ -12,6 +12,7 @@ interface PWAInstallState {
   isInstalled: boolean;
   isIOS: boolean;
   isStandalone: boolean;
+  isDismissed: boolean;
   promptInstall: () => Promise<boolean>;
   dismissPrompt: () => void;
 }
@@ -21,6 +22,7 @@ export function usePWAInstall(): PWAInstallState {
   const [isInstalled, setIsInstalled] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
   const [isStandalone, setIsStandalone] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(false);
 
   useEffect(() => {
     // Detect iOS
@@ -78,6 +80,7 @@ export function usePWAInstall(): PWAInstallState {
 
   const dismissPrompt = useCallback(() => {
     setInstallPrompt(null);
+    setIsDismissed(true);
   }, []);
 
   return {
@@ -85,6 +88,7 @@ export function usePWAInstall(): PWAInstallState {
     isInstalled,
     isIOS,
     isStandalone,
+    isDismissed,
     promptInstall,
     dismissPrompt,
   };

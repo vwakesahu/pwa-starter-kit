@@ -6,6 +6,7 @@ import { PWAProviders } from "@/components/pwa/pwa-providers";
 import { InstallPrompt } from "@/components/pwa/install-prompt";
 import { UpdatePrompt } from "@/components/pwa/update-prompt";
 import { OfflineIndicator } from "@/components/pwa/offline-indicator";
+import { AppBar } from "@/components/app-bar";
 import { siteConfig } from "@/lib/constants";
 
 const geistSans = Geist({
@@ -58,6 +59,7 @@ export default function RootLayout({
             <OfflineIndicator />
             <UpdatePrompt />
             <InstallPrompt />
+            <AppBar />
             {children}
           </PWAProviders>
         </ThemeProvider>
