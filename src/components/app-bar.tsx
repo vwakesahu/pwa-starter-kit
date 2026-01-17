@@ -6,7 +6,7 @@ import { Menu } from 'lucide-react';
 
 export function AppBar() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
       {/* Safe area top padding */}
       <div className="safe-area-pt" />
 
